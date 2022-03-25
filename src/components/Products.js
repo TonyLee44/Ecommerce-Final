@@ -7,7 +7,7 @@ export default function Products() {
   useEffect(() => {
     function displayProducts() {
       return axios
-      .get(`http://localhost:4000/api/products`)
+      .get(`http://us-cdbr-east-05.cleardb.net/api/products`)
       .then(response => {
         setProductList(response.data);
       })
