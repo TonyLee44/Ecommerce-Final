@@ -17,20 +17,19 @@ body {
   height: 100%;
   width: 100%;
   background-color: lightgreen;
-}
-
-header {
-  padding: 55px;
-  color: whitesmoke;
-  width: 100%;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* header css */
-.stretch {
+.headerContainer {
   background-color: rgb(0, 32, 67);
   padding: 20px;
   margin: 0;
   display: flex;
+  padding: 55px;
+  color: whitesmoke;
+  width: 100%;
 }
 
 .logo {
@@ -43,12 +42,11 @@ h1 {
   float: left;
   text-align: center;
   margin: 0;
-  padding: 0;
 }
 
 h2 {
   margin: 0;
-  padding: 20px;
+  padding-top: 5rem;
   text-align: center;
   font-size: 50px;
 }
@@ -72,10 +70,11 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 30px;
+  padding: 15px;
   color: whitesmoke;
   text-decoration: none;
   font-size: x-large;
+  font-size: 45px;
 }
 
 section {
@@ -121,7 +120,8 @@ section {
 
 button {
   margin: 0;
-  padding: 10px;
+  padding: 2.5rem;
+  width: 30%;
   border-radius: 10px;
 }
 
@@ -136,23 +136,25 @@ button:hover {
 form {
   text-align: center;
   width: 100%;
+  padding: 5rem;
+  padding-bottom: 5rem;
 }
 
 label {
-  font-size: 30px;
+  font-size: 40px;
   align-items: center;
 }
 
 textarea {
-  width: 500px;
-  height: 120px;
+  width: 70%;
+  height: 15rem;
   font-size: 20px;
 }
 
 input {
-  width: 300px;
+  width: 30%;
   height: 40px;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 select {
@@ -175,9 +177,9 @@ footer {
   flex-direction: row;
 }
 
-#footer {
+.footer {
   font-size: 15px;
-  height: 3em;
+  height: 100%;
   margin-top: 1em;
   color: whitesmoke;
   font-family: 'Caveat';
@@ -189,58 +191,217 @@ footer {
   justify-content: space-evenly;
 }
 
-#footer .footer-text .footer-links a {
+.footer .footer-text .footer-links a {
   text-decoration: none;
   color: whitesmoke;
 }
 
 /* Hover Effect for footer links */
-#footer .footer-text .footer-links a:hover {
+.footer .footer-text .footer-links a:hover {
   color: red;
+
 }
 
+.icons a {
+  padding: 10px;
+}
+
+
 /* Media Query for Tablet 800px or less */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 821px) {
+
+  nav ul {
+    float: none;
+    line-height: 50px;
+    list-style: none;
+  }
+
   header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    padding-bottom: 2rem;
   }
 
   nav {
-      display: flex;
-      justify-content: center;
+    display: flex;
+    justify-content: center;
   }
 
   nav ul {
-      display: flex;
-      justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
   }
 
   section h2 {
-      display: flex;
-      flex-direction: column;
-      font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
   }
 
+  form {
+    text-align: center;
+    width: 100%;
+    padding: 5rem;
+    padding-bottom: 8rem;
+  }
+
+  label {
+    font-size: 20px;
+    align-items: center;
+  }
+  
+  textarea {
+    width: 75%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  input {
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  select {
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  button {
+    margin: 0;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 10px;
+    }
+
   .productContainer {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      padding: .5em;
-      grid-gap: 1em;
-      margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: .5em;
+    grid-gap: 1em;
+    margin: 20px;
   }
 
   footer {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: row;
   }
 
   .footer-text>div {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   footer img {
-      width: 25px;
+    width: 25px;
   }
+
+  .footer {
+    font-size: 15px;
+    height: 100%;
+    margin-top: 1em;
+    color: whitesmoke;
+    font-family: 'Caveat';
+    text-align: center;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    background-color: rgb(0, 32, 67);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 2.5rem
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  nav ul {
+    float: none;
+    line-height: 50px;
+    list-style: none;
+  }
+  
+  nav ul li a {
+    padding: 15px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: x-large;
+    font-size: 20px;
+  }
+
+  .productContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: .5em;
+    grid-gap: 1em;
+    margin: 20px;
+  }
+
+  h1 {
+    padding-bottom: 2rem;
+  }
+
+  form {
+    text-align: center;
+    width: 100%;
+    padding: 2.5rem;
+  }
+
+  label {
+    font-size: 20px;
+    align-items: center;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  input {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  select {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  button {
+    margin: 0;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 10px;
+  }
+
+  footer {
+    margin-bottom: 0;
+    padding: 30px;
+    background-color: rgb(0, 32, 67);
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .footer {
+    font-size: 15px;
+    height: 100%;
+    margin-top: 1em;
+    color: whitesmoke;
+    font-family: 'Caveat';
+    text-align: center;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    background-color: rgb(0, 32, 67);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
 }

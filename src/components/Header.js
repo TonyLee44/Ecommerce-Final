@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 export default function Nav() {
   return (
     <div>
-      <header className="stretch">
+      <header className="headerContainer">
       <img className="logo" src="img/ecommercelogo.png" alt="logo"/>
       <h1>Gone Golfing</h1>
       <nav>

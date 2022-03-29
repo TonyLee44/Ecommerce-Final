@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 export default function Footer() {
   return (
     <div>
-          <footer id="footer">
+          <footer className="footer">
     <div className="footer-text">
       <div className="footer-links">
         <a href="/"> Home |</a>
@@ -18,8 +18,7 @@ export default function Footer() {
         </p>
       </div>
     </div>
-    <br />
-    <div>
+    <div className="icons">
       <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
         <img src="img/facebooklogo.jpeg" alt="facebook" width="50px"/>
       </a>
