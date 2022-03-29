@@ -6,10 +6,10 @@ const app = express();
 
 //connecting to the database and checking for errors if any are present
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'my_products'
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'b9414be449b6e1',
+    password: '4a55747b',
+    database: 'heroku_3adbd2446816101'
 });
 
 db.connect(err => {

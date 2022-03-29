@@ -7,7 +7,7 @@ export default function Products() {
   useEffect(() => {
     function displayProducts() {
       return axios
-      .get(`http://us-cdbr-east-05.cleardb.net/api/products`)
+      .get(`https://ecommerce-datab.herokuapp.com/api/products`)
       .then(response => {
         setProductList(response.data);
       })
