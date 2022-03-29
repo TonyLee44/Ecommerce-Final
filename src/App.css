@@ -127,7 +127,8 @@ button {
 
 button:hover {
   margin: 0;
-  padding: 10px;
+  width: 30%;
+  padding: 2.5rem;
   border-radius: 10px;
   background-color: yellow;
 }
@@ -279,6 +280,14 @@ footer {
     border-radius: 10px;
     }
 
+    button:hover {
+      margin: 0;
+      width: 50%;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color: yellow;
+    }
+
   .productContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -379,6 +388,14 @@ footer {
     padding: 1rem;
     width: 50%;
     border-radius: 10px;
+  }
+
+  button:hover {
+    margin: 0;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: yellow;
   }
 
   footer {
