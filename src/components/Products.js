@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function Products() {
   const [productList, setProductList] = useState(null);
-  const [price, setPrice] = useState("");
+  const [filter, setFilter] = useState("");
 //   const [filters, setFilters] = useState({
 //     s: ''
 // })
@@ -14,34 +14,51 @@ export default function Products() {
       .get(`https://ecommerce-datab.herokuapp.com/api/products`)
       .then(response => {
         setProductList(response.data);
-        console.log(response.data);
       })
     }
   displayProducts();
   }, []);
 
   useEffect(() => {
-    console.log(price);
-    if(price === "ASC") {
+    if(filter === "choose") {
+      axios
+      .get(`https://ecommerce-datab.herokuapp.com/api/products`)
+      .then((response) => {
+        setProductList(response.data);
+      })
+    }
+    if(filter === "ASC") {
       axios
       .get(`https://ecommerce-datab.herokuapp.com/api/products/asc`)
       .then((response) => {
-        console.log(response.data);
-        setProductList(response.data || []);
+        setProductList(response.data);
       })
     }
-    if (price === "DESC") {
+    if (filter === "DESC") {
       axios
     .get(`https://ecommerce-datab.herokuapp.com/api/products/desc`)
     .then((response) => {
-      console.log(response.data);
-      setProductList(response.data || []);
+      setProductList(response.data);
+      })
+    }
+    if (filter === "equipments") {
+      axios
+    .get(`https://ecommerce-datab.herokuapp.com/api/products/equipments`)
+    .then((response) => {
+      setProductList(response.data);
+      })
+    }
+    if (filter === "apparel") {
+      axios
+    .get(`https://ecommerce-datab.herokuapp.com/api/products/apparel`)
+    .then((response) => {
+      setProductList(response.data);
       })
     } else {
       return;
     }
 
-  }, [price])
+  }, [filter])
 
   // input for a filter by price and an input for product type.
 // const search = (s) => {
@@ -79,9 +96,13 @@ export default function Products() {
   <form>
     {/* <input type="text" placeholder="Search" onChange={e => search(e.target.value)}/> */}
     <div>
-      <select value={price} onChange={e => setPrice(e.target.value)} >
+      <label>Filter By:</label>
+      <select value={filter} onChange={e => setFilter(e.target.value)} >
+        <option value="choose">Choose an option</option>
         <option value="ASC">Price Lowest to Highest</option>
         <option value="DESC">Price Highest to Lowest</option>
+        <option value="equipments">Equipments</option>
+        <option value="apparel">Apparel</option>
       </select>
     </div>
   </form>
