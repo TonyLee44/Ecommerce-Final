@@ -1,5 +1,4 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -30,7 +29,6 @@ export default function Footer() {
           </a>
         </div>
       </footer>
-      <Outlet></Outlet>
     </div>
   )
 }
